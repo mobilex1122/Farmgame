@@ -30,7 +30,7 @@ public class RenderSystem extends EntitySystem {
 
     @Override
     public void update(float deltaTime) {
-        ScreenUtils.clear(1, 0, 0, 1);
+        ScreenUtils.clear(0, 0, 0, 1);
         this.batch.begin();
 
         ImmutableArray<Entity> entities = engine.getEntitiesFor(renderFamily);
@@ -40,7 +40,9 @@ public class RenderSystem extends EntitySystem {
             TextureComponent texture = entity.getComponent(TextureComponent.class);
             float width = texture.region.getRegionWidth();
             float height = texture.region.getRegionHeight();
-            this.batch.draw(texture.region,position.x,position.y,width,height);
+            float originX = width / 2;
+            float originY = height / 2;
+            this.batch.draw(texture.region,position.x - originX,position.y - originY,width,height);
         }
         this.batch.end();
         // renderQueue.clear();
