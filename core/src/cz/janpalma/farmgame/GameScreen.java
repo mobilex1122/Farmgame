@@ -62,7 +62,7 @@ public class GameScreen implements Screen {
         fixtureDef.friction = 0.4f;
         fixtureDef.restitution = 0.6f;
 
-        Fixture fixture = body.createFixture(fixtureDef);
+        body.createFixture(fixtureDef);
 
         circle.dispose();
 
