@@ -16,7 +16,7 @@ public class Farmgame extends Game {
 
 	@Override
 	public void create () {
-		// Start up function
+		// Start up functions
 		batch = new SpriteBatch();
 		font = new BitmapFont(); // use libGDX's default Arial font
 		camera = new OrthographicCamera();
